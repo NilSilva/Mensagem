@@ -1,5 +1,6 @@
 package com.example.mensagem;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
@@ -55,9 +56,8 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void mostraMensagem(View view) {
-        Toast.makeText(
-                this, 
-                "Clicou no botão enviar!!",
-                Toast.LENGTH_LONG).show();
+        Intent intent = new Intent(this, mostraMensagemActivity.class);
+
+        startActivity(intent);
     }
 }
