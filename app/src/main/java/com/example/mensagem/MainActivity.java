@@ -49,7 +49,7 @@ public class MainActivity extends AppCompatActivity {
 
         if(mensagem.trim().length() == 0){
 
-            editTextMensagem.setError("Preencha o campo");
+            editTextMensagem.setError(getString(R.string.mensagem_obrigatoria));
             editTextMensagem.requestFocus();
             return;
         }
