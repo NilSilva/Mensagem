@@ -2,9 +2,11 @@ package com.example.mensagem;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.Editable;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.EditText;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
@@ -42,9 +44,13 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void mostraMensagem(View view) {
+        EditText editTextMensagem = (EditText) findViewById(R.id.editTextMensagem);
+        String mensagem = editTextMensagem.getText().toString();
+        
         Intent intent = new Intent(this, mostraMensagemActivity.class);
 
-        intent.putExtra(DefinicoesApp.MENSAGEM, "Olá!!!");
+
+        intent.putExtra(DefinicoesApp.MENSAGEM, mensagem);
 
         startActivity(intent);
     }
