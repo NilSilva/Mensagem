@@ -47,8 +47,14 @@ public class MainActivity extends AppCompatActivity {
         EditText editTextMensagem = findViewById(R.id.editTextMensagem);
         String mensagem = editTextMensagem.getText().toString();
 
-        Intent intent = new Intent(this, mostraMensagemActivity.class);
+        if(mensagem.trim().length() == 0){
 
+            editTextMensagem.setError("Preencha o campo");
+            editTextMensagem.requestFocus();
+            return;
+        }
+
+        Intent intent = new Intent(this, mostraMensagemActivity.class);
 
         intent.putExtra(DefinicoesApp.MENSAGEM, mensagem);
 
